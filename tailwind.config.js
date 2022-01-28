@@ -1,9 +1,53 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      white: "#ffffff",
+      black: "#000000",
+      red: "rgb(255,69,58)",
+      orange: "rgb(255,159,10)",
+      yellow: "rgb(255,214,10)",
+      green: "rgb(48,209,88)",
+      mint: "rgb(102,212,207)",
+      teal: "rgb(64,200,224)",
+      cyan: "rgb(100,210,255)",
+      blue: "rgb(10,132,255)",
+      indigo: "rgb(94,92,230)",
+      purple: "rgb(191,90,242)",
+      pink: "rgb(255,55,95)",
+      brown: "rgb(172,142,104)",
+      gray: "rgb(142,142,147)",
+      gray2: "rgb(99,99,102)",
+      gray3: "rgb(72,72,74)",
+      gray4: "rgb(58,58,60)",
+      gray5: "rgb(44,44,46)",
+      gray6: "rgb(28,28,30)",
+    },
+    extend: {
+      transitionProperty: {
+        width: "width",
+      },
+      animation: {
+        wiggle: "wiggle 1.5s ease-in-out infinite",
+      },
+      keyframes: {
+        wiggle: {
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(0deg)" },
+          "20%": { transform: "rotate(0deg)" },
+          "30%": { transform: "rotate(4deg)" },
+          "40%": { transform: "rotate(-10deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "60%": { transform: "rotate(-10deg)" },
+          "70%": { transform: "rotate(4deg)" },
+          "80%": { transform: "rotate(0deg)" },
+          "90%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+      },
+    },
   },
   plugins: [],
-}
+};
