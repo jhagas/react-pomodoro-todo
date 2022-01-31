@@ -110,12 +110,29 @@ export default function Todo() {
     setTodos(items);
   };
 
+  function todoDoneLength() {
+    return todos.filter((todo) => {
+      return todo.done === true;
+    }).length;
+  }
+
   return (
-    <div className="w-full bg-black bg-opacity-50 rounded-xl px-8 py-6 max-h-full mb-4">
-      <h1 className="font-bold text-2xl text-white text-center mb-3">
-        📌 TO-DO
-      </h1>
-      <div className="mb-2 max-h-64 overflow-y-auto">
+    <div className="w-full bg-black bg-opacity-50 rounded-xl px-8 py-6 max-h-full mb-5">
+      <div className="flex flex-row justify-between items-center mb-4 px-4">
+        <h1 className="font-bold text-xl text-white h-fit">📌 TO-DO</h1>
+        <div className="w-60 text-xs flex flex-row gap-3 items-center text-gray">
+          <p className="text-center">
+            {todoDoneLength()}/{todos.length}
+          </p>
+          <div className="w-full text-center h-3 flex flex-row items-center rounded-xl bg-gray6 overflow-hidden">
+            <span
+              className="bg-green h-full animate-pulse transition-width duration-300"
+              style={{ width: `${(todoDoneLength() / todos.length) * 100}%` }}
+            ></span>
+          </div>
+        </div>
+      </div>
+      <div className="mb-2 max-h-60 overflow-y-auto">
         {todos.length !== 0 ? null : (
           <div className="flex flex-col items-center my-2">
             <IoCheckmarkDoneCircleOutline

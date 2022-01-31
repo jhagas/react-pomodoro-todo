@@ -134,7 +134,7 @@ export default function Pomo(props) {
 
   return (
     <div className="w-full py-10 px-6 bg-black bg-opacity-50 rounded-xl">
-      <div className="relative flex flex-row text-gray2 w-full justify-between mb-3 px-6">
+      <div className="relative flex flex-row text-gray2 w-full justify-between mb-5 px-6">
         <div className="rounded-full bg-gray6 w-8 h-8 flex flex-column justify-center items-center">
           <IoArrowBackOutline size="18px" />
         </div>
@@ -143,14 +143,14 @@ export default function Pomo(props) {
       </div>
       <p
         className={
-          "text-7xl transition-colors font-bold text-center " +
+          "text-8xl transition-colors font-bold text-center " +
           (run ? "text-white" : "text-mint animate-pulse")
         }
       >
         <Time />
       </p>
 
-      <div className="flex flex-row w-full items-center justify-center mt-4 gap-2">
+      <div className="flex flex-row w-full items-center justify-center mt-6 gap-2">
         <div
           className={
             "rounded-full w-12 h-12 flex flex-row items-center justify-center hover:bg-opacity-75 cursor-pointer transition-colors text-white " +
