@@ -125,10 +125,12 @@ export default function Todo() {
             {todoDoneLength()}/{todos.length}
           </p>
           <div className="w-full text-center h-3 flex flex-row items-center rounded-xl bg-gray6 overflow-hidden">
-            <span
-              className="bg-green h-full animate-pulse transition-width duration-300"
-              style={{ width: `${(todoDoneLength() / todos.length) * 100}%` }}
-            ></span>
+            {todos.length !== 0 ? (
+              <span
+                className="bg-green h-full animate-pulse transition-width duration-300"
+                style={{ width: `${(todoDoneLength() / todos.length) * 100}%` }}
+              ></span>
+            ) : null}
           </div>
         </div>
       </div>
